@@ -1,18 +1,30 @@
 import unittest
 
 def roman(x):
+    result=''
     if x==1:
-        return "I"
+        result="I"
     elif x==2:
-        return "II"
+        result="II"
     elif x==3:
-        return "III"
+        result="III"
     elif x==4:
-        return "IV"
+        result="IV"
     elif x==5:
-        return "V"
+        result="V"
     elif x==6:
-        return "VI"
+        result="VI"
+    elif x==7:
+        result="VII"
+    elif x==8:
+        result="VIII"
+    elif x==9:
+        result="IX"
+    elif x==10:
+        result="X"
+    return result
+
+
 class RomanNumeralsTest(unittest.TestCase):
     # @unittest.skip
     def test_1_is_a_single_i(self):
@@ -38,7 +50,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_6_being_5_1_is_vi(self):
         self.assertEqual(roman(6), "VI")
 
-    @unittest.skip
+    # @unittest.skip
     def test_9_being_10_1_is_ix(self):
         self.assertEqual(roman(9), "IX")
 
