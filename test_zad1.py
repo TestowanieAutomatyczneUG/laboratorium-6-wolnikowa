@@ -19,6 +19,8 @@ class hamming():
                     counter+=1
                 i+=1
             return counter
+        elif len(s1)>len(s2):
+            raise ValueError("First input is longer than the other!")
         # return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
 
 
@@ -43,7 +45,7 @@ class HammingTest(unittest.TestCase):
     def test_long_different_strands(self):
         self.assertEqual(hamming.distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 
-    @unittest.skip
+    # @unittest.skip
     def test_disallow_first_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
             hamming.distance("AATG", "AAA")
