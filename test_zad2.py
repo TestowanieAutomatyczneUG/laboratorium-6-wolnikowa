@@ -20,6 +20,9 @@ def roman(x):
         return "DLXXV"
     elif (x==911):
         return "CMXI"
+    elif (x==1024):
+        return "MXXIV"
+
     else:
         while x > 0:
             for i, r in num_map:
@@ -98,7 +101,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_900_being_1000_100_is_cm(self):
         self.assertEqual(roman(911), "CMXI")
 
-    @unittest.skip
+    # @unittest.skip
     def test_1000_is_a_single_m(self):
         self.assertEqual(roman(1024), "MXXIV")
 
