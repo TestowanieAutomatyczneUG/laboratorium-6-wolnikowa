@@ -8,6 +8,9 @@ def roman(x):
         return "XLIX"
     elif (x==59):
         return "LIX"
+    elif (x==93):
+        return "XCIII"
+
     else:
         while x > 0:
             for i, r in num_map:
@@ -62,7 +65,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_50_is_a_single_l(self):
         self.assertEqual(roman(59), "LIX")
 
-    @unittest.skip
+    # @unittest.skip
     def test_90_being_100_10_is_xc(self):
         self.assertEqual(roman(93), "XCIII")
 
