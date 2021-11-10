@@ -11,7 +11,8 @@ def roman(x):
         return "IV"
     elif x==5:
         return "V"
-    
+    elif x==6:
+        return "VI"
 class RomanNumeralsTest(unittest.TestCase):
     # @unittest.skip
     def test_1_is_a_single_i(self):
@@ -33,7 +34,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_5_is_a_single_v(self):
         self.assertEqual(roman(5), "V")
 
-    @unittest.skip
+    # @unittest.skip
     def test_6_being_5_1_is_vi(self):
         self.assertEqual(roman(6), "VI")
 
