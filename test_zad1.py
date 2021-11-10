@@ -25,7 +25,8 @@ class hamming():
             raise ValueError("Second input is longer than the first one!")
         elif s1=="" or s2=="":
             raise ValueError("Input cannot be empty!")
-        # return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
+        else:
+            return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
 
 
 class HammingTest(unittest.TestCase):
