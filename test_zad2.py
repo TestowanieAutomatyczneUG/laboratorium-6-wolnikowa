@@ -4,32 +4,11 @@ num_map = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, '
 
 def roman(x):
     result=""
-    if (x==49):
-        return "XLIX"
-    elif (x==59):
-        return "LIX"
-    elif (x==93):
-        return "XCIII"
-    elif (x == 141):
-        return "CXLI"
-    elif (x == 163):
-        return "CLXIII"
-    elif (x==402):
-        return "CDII"
-    elif (x==575):
-        return "DLXXV"
-    elif (x==911):
-        return "CMXI"
-    elif (x==1024):
-        return "MXXIV"
-    elif x==3000:
-        return "MMM"
-    else:
-        while x > 0:
-            for i, r in num_map:
-                while x >= i:
-                    result += r
-                    x -= i
+    while x > 0:
+        for i, r in num_map:
+            while x >= i:
+                result += r
+                x -= i
     return result
 
 
