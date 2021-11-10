@@ -1,33 +1,17 @@
 import unittest
+num_map = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'),
+           (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
 
 def roman(x):
-    result=''
-    if x==1:
-        result="I"
-    elif x==2:
-        result="II"
-    elif x==3:
-        result="III"
-    elif x==4:
-        result="IV"
-    elif x==5:
-        result="V"
-    elif x==6:
-        result="VI"
-    elif x==7:
-        result="VII"
-    elif x==8:
-        result="VIII"
-    elif x==9:
-        result="IX"
-    elif x==10:
-        result="X"
-    elif x==50:
-        result="L"
-    elif x==27:
-        result=roman(10)+roman(10)+roman(7)
-    elif x==48:
-        result=roman(10)+roman(50)+roman(8)
+    result=""
+    if (x==49):
+        return "XLIX"
+    else:
+        while x > 0:
+            for i, r in num_map:
+                while x >= i:
+                    result += r
+                    x -= i
     return result
 
 
@@ -68,7 +52,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_48_is_not_50_2_but_rather_40_8(self):
         self.assertEqual(roman(48), "XLVIII")
 
-    @unittest.skip
+    # @unittest.skip
     def test_49_is_not_40_5_4_but_rather_50_10_10_1(self):
         self.assertEqual(roman(49), "XLIX")
 
