@@ -5,6 +5,8 @@ def roman(x):
         return "I"
     elif x==2:
         return "II"
+    elif x==3:
+        return "III"
 
 
 class RomanNumeralsTest(unittest.TestCase):
@@ -16,7 +18,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_2_is_two_i_s(self):
         self.assertEqual(roman(2), "II")
 
-    @unittest.skip
+    # @unittest.skip
     def test_3_is_three_i_s(self):
         self.assertEqual(roman(3), "III")
 
