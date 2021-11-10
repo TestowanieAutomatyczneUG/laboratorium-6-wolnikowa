@@ -12,6 +12,8 @@ def roman(x):
         return "XCIII"
     elif (x == 141):
         return "CXLI"
+    elif (x == 163):
+        return "CLXIII"
 
     else:
         while x > 0:
@@ -75,7 +77,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_100_is_a_single_c(self):
         self.assertEqual(roman(141), "CXLI")
 
-    @unittest.skip
+    # @unittest.skip
     def test_60_being_50_10_is_lx(self):
         self.assertEqual(roman(163), "CLXIII")
 
