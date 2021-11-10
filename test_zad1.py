@@ -8,6 +8,8 @@ class hamming():
             return 0
         elif len(s1)==1 and len(s2)==1 and s1!=s2:
             return 1
+        elif len(s1)==len(s2) and s1==s2:
+            return 0
         # return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
 
 
@@ -24,7 +26,7 @@ class HammingTest(unittest.TestCase):
     def test_single_letter_different_strands(self):
         self.assertEqual(hamming.distance("G", "T"), 1)
 
-    @unittest.skip
+    # @unittest.skip
     def test_long_identical_strands(self):
         self.assertEqual(hamming.distance("GGACTGAAATCTG", "GGACTGAAATCTG"), 0)
 
