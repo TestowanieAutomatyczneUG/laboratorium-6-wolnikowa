@@ -10,6 +10,15 @@ class hamming():
             return 1
         elif len(s1)==len(s2) and s1==s2:
             return 0
+        elif len(s1)==len(s2) and s1!=s2:
+            counter=0
+            for i in range(0,len(s1)):
+                if (s1[i]==s2[i]):
+                    continue
+                else:
+                    counter+=1
+                i+=1
+            return counter
         # return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
 
 
@@ -30,7 +39,7 @@ class HammingTest(unittest.TestCase):
     def test_long_identical_strands(self):
         self.assertEqual(hamming.distance("GGACTGAAATCTG", "GGACTGAAATCTG"), 0)
 
-    @unittest.skip
+    # @unittest.skip
     def test_long_different_strands(self):
         self.assertEqual(hamming.distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 
