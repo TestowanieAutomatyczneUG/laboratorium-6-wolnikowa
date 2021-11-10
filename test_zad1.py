@@ -23,7 +23,7 @@ class hamming():
             raise ValueError("First input is longer than the other!")
         elif len(s1)<len(s2):
             raise ValueError("Second input is longer than the first one!")
-        elif s1=="":
+        elif s1=="" or s2=="":
             raise ValueError("Input cannot be empty!")
         # return sum(ch1 != ch2 for ch1, ch2 in zip(s1, s2))
 
@@ -64,7 +64,7 @@ class HammingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             hamming.distance("", "G")
 
-    @unittest.skip
+    # @unittest.skip
     def test_disallow_right_empty_strand(self):
         with self.assertRaisesWithMessage(ValueError):
             hamming.distance("G", "")
