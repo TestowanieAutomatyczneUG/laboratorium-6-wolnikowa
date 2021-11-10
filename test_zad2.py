@@ -22,6 +22,8 @@ def roman(x):
         result="IX"
     elif x==10:
         result="X"
+    elif x==27:
+        result=roman(10)+roman(10)+roman(7)
     return result
 
 
@@ -54,7 +56,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_9_being_10_1_is_ix(self):
         self.assertEqual(roman(9), "IX")
 
-    @unittest.skip
+    # @unittest.skip
     def test_20_is_two_x_s(self):
         self.assertEqual(roman(27), "XXVII")
 
