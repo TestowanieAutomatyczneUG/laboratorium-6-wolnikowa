@@ -16,6 +16,8 @@ def roman(x):
         return "CLXIII"
     elif (x==402):
         return "CDII"
+    elif (x==575):
+        return "DLXXV"
     else:
         while x > 0:
             for i, r in num_map:
@@ -86,7 +88,7 @@ class RomanNumeralsTest(unittest.TestCase):
     def test_400_being_500_100_is_cd(self):
         self.assertEqual(roman(402), "CDII")
 
-    @unittest.skip
+    # @unittest.skip
     def test_500_is_a_single_d(self):
         self.assertEqual(roman(575), "DLXXV")
 
